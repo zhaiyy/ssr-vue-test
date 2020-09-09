@@ -5,11 +5,22 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "start": "npm run build:server && npm run build:client && npm run service",
+    "build:client": "cross-env RUN_ENV=client vue-cli-service build",
+    "build:server": "cross-env RUN_ENV=server vue-cli-service build --mode server",
+    "lint": "vue-cli-service lint",
+    "service": "node server\\index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "cross-env": "^7.0.2",
+    "koa": "^2.13.0",
+    "koa-static": "^5.0.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.3",
+    "vue-server-renderer": "^2.6.12",
+    "vuex": "^3.5.1",
+    "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -18,7 +29,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
   },
   "eslintConfig": {
     "root": true,
