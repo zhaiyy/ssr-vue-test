@@ -2,7 +2,7 @@ const VueSSRServerPlugin = require("vue-server-renderer/server-plugin");
 const VueSSRClientPlugin = require("vue-server-renderer/client-plugin");
 const nodeExternals = require("webpack-node-externals");
 const env = process.env;
-const target = env.RUN_ENV || 'client'
+const target = env.VUE_ENV || 'client'
 const isServer = target === "server";
 
 module.exports = {

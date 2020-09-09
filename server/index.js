@@ -16,7 +16,7 @@ const clientManifest = require("../dist/client/vue-ssr-client-manifest.json");
 const renderer = createBundleRenderer(serverBundle, {
   runInNewContext: false,
   template: fs.readFileSync(
-    path.resolve(__dirname, "../public/index.template.html"),
+    path.resolve(__dirname, "../public/index.html"),
     "utf-8"
   ),
   clientManifest,
